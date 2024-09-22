@@ -1,0 +1,712 @@
+<html><head><base href="https://veter.standoff2.pro/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>LonG Standoff 2 - Unique Blogger</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
+    @font-face {
+        font-family: 'DelaGothicOne-Regular';
+        src: url('DelaGothicOne-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    :root {
+        --primary-color: #ff3e3e;
+        --secondary-color: #3e8fff;
+        --background-color: #1a1a2e;
+        --text-color: #e0e0e0;
+        --gradient-color-1: rgba(255,62,62,0.7);
+        --gradient-color-2: rgba(62,143,255,0.7);
+        --gradient-animation: pulseBG 10s ease-in-out infinite;
+    }
+
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Exo 2', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        background: none;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .language-switcher {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .language-btn {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        padding: 5px 10px;
+        margin-left: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .language-btn:hover, .language-btn.active {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    .hero {
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('https://source.unsplash.com/random/1920x1080?standoff2,gaming') no-repeat center center;
+        background-size: cover;
+    }
+
+    .animated-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, var(--gradient-color-1), var(--gradient-color-2));
+        mix-blend-mode: overlay;
+        z-index: 1;
+        background-size: 200% 200%;
+        animation: randomGradientMove 1s linear infinite;
+    }
+
+    @keyframes pulseBG {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 0.5; }
+    }
+
+    @keyframes randomGradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .hero-content {
+        text-align: center;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        z-index: 2;
+        background: rgba(0,0,0,0.5);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        width: 90%;
+        max-width: 600px;
+    }
+
+    .hero h1 {
+        font-size: 4em;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-family: 'DelaGothicOne-Regular', 'Trebuchet MS', sans-serif;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        text-decoration: none;
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid #ffffff;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        margin: 10px 0;
+    }
+
+    .btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            to bottom right,
+            rgba(255, 255, 255, 0.3),
+            rgba(255, 255, 255, 0.1)
+        );
+        transform: rotate(45deg);
+        z-index: -1;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover::before {
+        left: 100%;
+    }
+
+    .gradient-settings {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 1000;
+    }
+
+    .gradient-settings label {
+        display: block;
+        margin-bottom: 5px;
+        color: #ffffff;
+    }
+
+    .gradient-settings input[type="color"] {
+        width: 50px;
+        height: 30px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .name-input {
+        margin-bottom: 20px;
+    }
+
+    .name-input input {
+        padding: 5px;
+        margin-right: 10px;
+    }
+
+    .name-input button {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .participant-settings {
+        margin-bottom: 20px;
+    }
+
+    .participant-settings input[type="number"] {
+        width: 60px;
+        margin-right: 10px;
+    }
+
+    #nameInputs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    #nameInputs input {
+        flex: 1 1 calc(50% - 5px);
+        min-width: 120px;
+    }
+
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1001;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: var(--background-color);
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid var(--primary-color);
+        width: 80%;
+        max-width: 500px;
+        border-radius: 10px;
+        color: var(--text-color);
+    }
+
+    .close {
+        color: var(--text-color);
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: var(--primary-color);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* Roulette styles */
+    .roulette {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .roulette-wheel {
+        width: 100%;
+        height: 100%;
+    }
+
+    .roulette-pointer {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 20px solid #ff0000;
+    }
+
+    .roulette-spin {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Responsive styles */
+    @media screen and (max-width: 1200px) {
+        .container {
+            padding: 15px;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .hero h1 {
+            font-size: 3em;
+        }
+        .hero p {
+            font-size: 1.3em;
+        }
+        .btn {
+            padding: 12px 24px;
+            font-size: 1.1em;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.5em;
+        }
+        .hero p {
+            font-size: 1.1em;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+        .hero-content {
+            padding: 30px;
+            width: 95%;
+        }
+        .gradient-settings {
+            bottom: 10px;
+            left: 10px;
+        }
+        .roulette {
+            width: 250px;
+            height: 250px;
+        }
+        .roulette-wheel svg {
+            width: 250px;
+            height: 250px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .hero h1 {
+            font-size: 2em;
+        }
+        .hero p {
+            font-size: 1em;
+        }
+        .btn {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+        .hero-content {
+            padding: 20px;
+        }
+        .language-switcher {
+            top: 10px;
+            right: 10px;
+        }
+        .btn-container {
+            gap: 10px;
+        }
+        .roulette {
+            width: 200px;
+            height: 200px;
+        }
+        .roulette-wheel svg {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        .hero h1 {
+            font-size: 1.8em;
+        }
+        .hero p {
+            font-size: 0.9em;
+        }
+        .btn {
+            padding: 6px 12px;
+            font-size: 0.8em;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .hero-content {
+            padding: 15px;
+        }
+        .hero h1 {
+            font-size: 1.6em;
+        }
+        .btn {
+            padding: 5px 10px;
+            font-size: 0.7em;
+        }
+    }
+</style></head><body>
+    <header>
+        <div class="language-switcher">
+            <button class="language-btn active" data-lang="ru">RU</button>
+            <button class="language-btn" data-lang="en">EN</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="animated-bg"></div>
+            <div class="hero-content">
+                <h1 id="title" style="font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; color: #FF3E3E; text-shadow: 2px 2px 4px rgba(0,0,0,0.7), -2px -2px 4px rgba(255,255,255,0.3); font-size: 4.5em; margin-bottom: 30px;">LONG STANDOFF 2</h1>
+                <p id="subtitle">Мои каналы:</p>
+                <div class="btn-container">
+                    <a href="https://t.me/bsaxter" class="btn" id="btn1">longeesz 𝘽𝙎</a>
+                    <a href="https://t.me/longeesz" class="btn" id="btn2">𝙇𝙤𝙣𝙂🍃</a>
+                    <a href="https://t.me/veterxz" class="btn" id="btn3">Прайс рекламы</a>
+                    <a href="https://t.me/holymoder" class="btn" id="btn4">Я (написать в лс)</a>
+                    <button class="btn" id="openRoulette">Рулетка</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="gradient-settings">
+        <label for="color1">Color 1:</label>
+        <input type="color" id="color1" value="#ff3e3e">
+        <label for="color2">Color 2:</label>
+        <input type="color" id="color2" value="#3e8fff">
+    </div>
+
+    <div id="rouletteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <div class="participant-settings">
+                <label for="participantCount">Number of participants:</label>
+                <input type="number" id="participantCount" min="2" max="12" value="6">
+                <button id="updateParticipants">Update</button>
+            </div>
+            <div id="nameInputs"></div>
+            <div class="name-input">
+                <input type="text" id="nameInput" placeholder="Enter a name">
+                <button id="addName">Add Name</button>
+            </div>
+            <div class="roulette">
+                <div class="roulette-wheel">
+                    <svg width="300" height="300" viewBox="0 0 300 300">
+                    </svg>
+                </div>
+                <div class="roulette-pointer"></div>
+                <button class="roulette-spin">Крутить!</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    window.addEventListener('unhandledrejection', function(event) {
+        console.error('Unhandled promise rejection:', event.reason);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        try {
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const languageButtons = languageSwitcher.querySelectorAll('.language-btn');
+            const color1Input = document.getElementById('color1');
+            const color2Input = document.getElementById('color2');
+            const animatedBg = document.querySelector('.animated-bg');
+
+            const translations = {
+                ru: {
+                    title: "LonG Standoff 2",
+                    subtitle: "Мои каналы:",
+                    btn1: "longeesz 𝘽𝙎",
+                    btn2: "𝙇𝙤𝙣𝙂🍃",
+                    btn3: "Прайс рекламы",
+                    btn4: "Я (написать в лс)",
+                    openRoulette: "Рулетка",
+                    spin: "Крутить!"
+                },
+                en: {
+                    title: "LonG Standoff 2",
+                    subtitle: "My channels:",
+                    btn1: "longeesz 𝘽𝙎",
+                    btn2: "𝙇𝙤𝙣𝙂🍃",
+                    btn3: "Advertising Prices",
+                    btn4: "Me (send a message)",
+                    openRoulette: "Roulette",
+                    spin: "Spin!"
+                }
+            };
+
+            function setLanguage(lang) {
+                document.getElementById('title').textContent = translations[lang].title;
+                document.getElementById('subtitle').textContent = translations[lang].subtitle;
+                document.getElementById('btn1').textContent = translations[lang].btn1;
+                document.getElementById('btn2').textContent = translations[lang].btn2;
+                document.getElementById('btn3').textContent = translations[lang].btn3;
+                document.getElementById('btn4').textContent = translations[lang].btn4;
+                document.getElementById('openRoulette').textContent = translations[lang].openRoulette;
+                document.querySelector('.roulette-spin').textContent = translations[lang].spin;
+
+                languageButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+            }
+
+            languageButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    setLanguage(btn.dataset.lang);
+                });
+            });
+
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    btn.style.setProperty('--x', `${x}px`);
+                    btn.style.setProperty('--y', `${y}px`);
+                });
+            });
+
+            function updateGradient() {
+                const color1 = color1Input.value + 'b3'; 
+                const color2 = color2Input.value + 'b3'; 
+                animatedBg.style.background = `linear-gradient(135deg, ${color1}, ${color2})`;
+            }
+
+            color1Input.addEventListener('input', () => {
+                updateGradient();
+            });
+
+            color2Input.addEventListener('input', () => {
+                updateGradient();
+            });
+
+            const openRouletteBtn = document.getElementById('openRoulette');
+            const rouletteModal = document.getElementById('rouletteModal');
+            const closeBtn = rouletteModal.querySelector('.close');
+            const rouletteWheel = document.querySelector('.roulette-wheel');
+            const spinBtn = document.querySelector('.roulette-spin');
+
+            let sectors = [
+                {color: '#f82', label: 'Name 1'},
+                {color: '#0bf', label: 'Name 2'},
+                {color: '#fb0', label: 'Name 3'},
+                {color: '#0fb', label: 'Name 4'},
+                {color: '#b0f', label: 'Name 5'},
+                {color: '#f0b', label: 'Name 6'},
+            ];
+
+            const svg = document.querySelector('.roulette-wheel svg');
+            const PI = Math.PI;
+            const rad = 100;
+
+            function sector(i, total) {
+                const arc = (2 * PI) / total;
+                const angle = (i * arc) - (PI / 2);
+                const x1 = rad * Math.cos(angle);
+                const y1 = rad * Math.sin(angle);
+                const x2 = rad * Math.cos(angle + arc);
+                const y2 = rad * Math.sin(angle + arc);
+                return `M 150 150 L ${150 + x1} ${150 + y1} A ${rad} ${rad} 0 0 1 ${150 + x2} ${150 + y2} Z`;
+            }
+
+            function getRandomColor() {
+                return '#' + Math.floor(Math.random()*16777215).toString(16);
+            }
+
+            function updateRoulette() {
+                svg.innerHTML = '';
+                const tot = sectors.length;
+                const arc = (2 * PI) / tot;
+                sectors.forEach((sec, i) => {
+                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    path.setAttribute('d', sector(i, tot));
+                    path.setAttribute('fill', sec.color);
+                    svg.appendChild(path);
+
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    const angle = (i * arc) + (arc / 2) - (PI / 2);
+                    const x = (rad * 0.7) * Math.cos(angle) + 150;
+                    const y = (rad * 0.7) * Math.sin(angle) + 150;
+                    text.setAttribute('x', x);
+                    text.setAttribute('y', y);
+                    text.setAttribute('text-anchor', 'middle');
+                    text.setAttribute('fill', '#fff');
+                    text.textContent = sec.label;
+                    svg.appendChild(text);
+                });
+            }
+
+            function updateParticipants() {
+                const count = parseInt(document.getElementById('participantCount').value);
+                const nameInputs = document.getElementById('nameInputs');
+                nameInputs.innerHTML = '';
+                
+                for (let i = 0; i < count; i++) {
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.placeholder = `Participant ${i + 1}`;
+                    input.value = sectors[i] ? sectors[i].label : `Name ${i + 1}`;
+                    input.dataset.index = i;  // Add this line to store the index
+                    input.addEventListener('input', updateParticipantName);  // Add this line
+                    nameInputs.appendChild(input);
+                }
+            }
+
+            function updateParticipantName(event) {
+                const index = parseInt(event.target.dataset.index);
+                const newName = event.target.value.trim() || event.target.placeholder;
+                sectors[index].label = newName;
+                updateRoulette();
+            }
+
+            document.getElementById('updateParticipants').addEventListener('click', () => {
+                updateParticipants();
+                const inputs = document.querySelectorAll('#nameInputs input');
+                sectors = Array.from(inputs).map((input, index) => ({
+                    color: sectors[index] ? sectors[index].color : getRandomColor(),
+                    label: input.value.trim() || input.placeholder
+                }));
+                updateRoulette();
+            });
+
+            document.getElementById('addName').addEventListener('click', () => {
+                const nameInput = document.getElementById('nameInput');
+                const name = nameInput.value.trim();
+                if (name) {
+                    sectors.push({
+                        color: getRandomColor(),
+                        label: name
+                    });
+                    nameInput.value = '';
+                    updateRoulette();
+                    // Update the participant count and refresh the name inputs
+                    document.getElementById('participantCount').value = sectors.length;
+                    updateParticipants();
+                }
+            });
+
+            openRouletteBtn.addEventListener('click', () => {
+                rouletteModal.style.display = 'block';
+                updateParticipants();
+            });
+
+            closeBtn.addEventListener('click', () => {
+                rouletteModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == rouletteModal) {
+                    rouletteModal.style.display = 'none';
+                }
+            });
+
+            let isSpinning = false;
+            spinBtn.addEventListener('click', () => {
+                if (isSpinning) return;
+                isSpinning = true;
+                const minRotation = 3600; // Minimum 10 full rotations
+                const maxRotation = 7200; // Maximum 20 full rotations
+                const rotation = minRotation + Math.floor(Math.random() * (maxRotation - minRotation));
+                const duration = 2 + Math.random() * 7; // Random duration between 2 and 9 seconds
+                
+                svg.style.transition = `transform ${duration}s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+                svg.style.transform = `rotate(${rotation}deg)`;
+                
+                setTimeout(() => {
+                    isSpinning = false;
+                    const actualRotation = rotation % 360;
+                    const sectorIndex = sectors.length - 1 - Math.floor(actualRotation / (360 / sectors.length));
+                    alert(`Вы выиграли: ${sectors[sectorIndex].label}`);
+                }, duration * 1000);
+            });
+
+            // Initialize roulette
+            updateRoulette();
+            updateParticipants();
+            setLanguage('ru'); // Set Russian as the default language
+        } catch (error) {
+            console.error('Error in DOMContentLoaded:', error);
+        }
+    });
+    </script>
+</body></html>
